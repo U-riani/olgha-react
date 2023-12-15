@@ -1,38 +1,132 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main-image,
+.main-details-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.image-container {
+  position: relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-details-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the container */
+}
+
+
+.image-title {
+  position: absolute;
+  width: 100%;
+  bottom: 0; /* Adjust as needed to center vertically */
+  left: 50%;
+  transform: translate(-50%);
+  color: rgb(239, 239, 239); /* Set the title color */
+  font-size: 16px; /* Set the title font size */
+  font-weight: bold; /* Set the title font weight */
+  text-align: center; /* Center the title text */
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  margin-bottom: 0 !important;
+}
+
+.contact-icon-container {
+  height: 130px;
+}
+
+
+.link {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-decoration: none;
+}
+
+a:link,
+.contact-name h2:link {
+  color: black;
+}
+
+a:visited,
+.contact-name h2:visited {
+  color: rgb(3, 29, 3);
+}
+
+a:hover,
+.contact-name h2:hover {
+  color: rgb(102, 105, 104);
+}
+
+a:active,
+.contact-name h2:active {
+  color: rgb(72, 2, 63);
+}
+
+.open-image-fullscreen-container {
+  position: fixed;
+  width: 100vw;
+  height: 90vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.open-image-container  {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.blur-background {
+  filter: blur(10px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.open-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  object-fit: contain;
+  opacity: 1;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
+}
+
+.price-background {
+  background-color: rgba(111, 111, 111, 0.462);
+  width: fit-content;
+  padding: 2px 4px;
+  border-radius: 5px;
+}
+
+.priceList-inner-texts {
+  flex-direction: column;
+  align-items: center;
+}
+
+
+@media only screen and (max-width: 1023px) {
+  .contact-icon-container {
+    height: 200px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .carousel-image {
+    width: 100%;
+    height: 80vh;
   }
 }
